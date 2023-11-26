@@ -6,8 +6,11 @@ const noBtn = document.querySelector(".no-btn");
 
 yesBtn.addEventListener("click", () => {
   question.innerHTML = "Yay, see you on the 18th!";
-  gif.src =
-    "https://media.giphy.com/media/UMon0fuimoAN9ueUNP/giphy.gif";
+  gif.src ="https://media.giphy.com/media/UMon0fuimoAN9ueUNP/giphy.gif";
+  noBtn.style.display = "none";
+  const remainingBtn = document.querySelector('.btn-group button:not(.no-btn)');
+    // Center the remaining button by setting margin to auto
+    remainingBtn.style.margin = 'auto';
 });
 
 noBtn.addEventListener("mouseover", () => {
@@ -20,4 +23,5 @@ noBtn.addEventListener("mouseover", () => {
 
   noBtn.style.left = randomX + "px";
   noBtn.style.top = randomY + "px";
+  noBtn.style.transition = "all 2s"
 });
