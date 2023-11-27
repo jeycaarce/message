@@ -48,9 +48,11 @@ button {
 button:nth-child(1) {
     margin-left: -200px;
     background: #e94d58;
+    transition: all 2s ease;
 }
 button:nth-child(2) {
     margin-right: -200px;
     background: white;
     color: #e94d58;
+    transition: top 200ms linear, left 200ms linear, opacity 500ms linear;
 }
