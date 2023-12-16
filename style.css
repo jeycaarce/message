@@ -32,30 +32,6 @@ h2 {
     justify-content: center;
     margin-top: 50px;
 }
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-30px);
-    }
-    60% {
-        transform: translateY(-15px);
-    }
-}
-
 button {
     position: absolute;
     width: 150px;
@@ -67,48 +43,16 @@ button {
     cursor: pointer;
     box-shadow: 0 2px 4px gray;
     border: 2px solid #e94d58;
-    animation: pulse 2s infinite;
+    font-size: 1.2em;
 }
-
-.gif.bounce-animation {
-    animation: bounce 2s ease;
-}
-button.yes-btn {
+button:nth-child(1) {
     margin-left: -200px;
     background: #e94d58;
-    animation: pulse 2s infinite, rotate-animation 5s infinite linear;
+    transition: all 2s ease;
 }
-
-button.no-btn {
+button:nth-child(2) {
     margin-right: -200px;
     background: white;
     color: #e94d58;
-    animation: pulse 2s infinite, shake-animation 0.5s infinite;
-}
-
-.fun-message {
-    text-align: center;
-    font-size: 1em;
-    color: #e94d58;
-    margin-top: 20px;
-    opacity: 0;
-    transition: opacity 0.5s;
-}
-
-@keyframes rotate-animation {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes shake-animation {
-    0%, 100% {
-        transform: translateX(0);
-    }
-    50% {
-        transform: translateX(-10px);
-    }
+    transition: top 200ms linear, left 200ms linear, opacity 500ms linear;
 }
