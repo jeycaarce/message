@@ -1,8 +1,23 @@
-*
-{
+@keyframes zigzag {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-10px);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+    75% {
+        transform: translateX(-10px);
+    }
+}
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    animation: zigzag 1s infinite;
 }
 
 body {
@@ -17,6 +32,7 @@ body {
 .gif {
     height: 100%;
     width: 100%;
+    animation: none; /* Disable the zigzag animation for the gif */
 }
 
 h2 {
@@ -44,15 +60,18 @@ button {
     box-shadow: 0 2px 4px gray;
     border: 2px solid #e94d58;
     font-size: 1.2em;
+    animation: none; /* Disable the zigzag animation for buttons */
 }
 button:nth-child(1) {
     margin-left: -200px;
     background: #e94d58;
-    transition: all 2s ease;
+    transition: all 2s ease, transform 1s infinite; /* Add zigzag to the transition */
+    animation: zigzag 1s infinite; /* Apply zigzag animation */
 }
 button:nth-child(2) {
     margin-right: -200px;
     background: white;
     color: #e94d58;
-    transition: top 200ms linear, left 200ms linear, opacity 500ms linear;
+    transition: top 200ms linear, left 200ms linear, opacity 500ms linear, transform 1s infinite; /* Add zigzag to the transition */
+    animation: zigzag 1s infinite; /* Apply zigzag animation */
 }
